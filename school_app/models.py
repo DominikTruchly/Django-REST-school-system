@@ -27,3 +27,17 @@ class Subject(models.Model):
 
     def __str__(self):
         return f"NAME: {self.name}, ABBREV: {self.abbrev}"
+
+class Student(models.Model):
+    name = models.CharField(max_length=256)
+    surname = models.CharField(max_length=256)
+    grade = models.IntegerField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    subjects = models.ManyToManyField(Subject,related_name="students", blank = True)
+
+    class Meta:
+        ordering= ['created']
+
+    def __str__(self):
+        return f"NAME: {self.name}, ABBREV: {self.abbrev}"

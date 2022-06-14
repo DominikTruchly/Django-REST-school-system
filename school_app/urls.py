@@ -7,6 +7,7 @@ from . import views
 router = DefaultRouter()
 router.register('teachers', views.TeacherViewset)
 router.register('subjects', views.SubjectViewset)
+router.register('students', views.StudentViewset)
 
 urlpatterns = [
     # path('hello-world', views.hello_world, name="hello-world"),
