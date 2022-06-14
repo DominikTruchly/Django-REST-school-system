@@ -1,1 +1,1 @@
-School system backend project for using CRUD methods on stundents, teachers and subjects over PostgreSQL database.  
+School system backend project for using CRUD methods on students, teachers and subjects over PostgreSQL database.  
