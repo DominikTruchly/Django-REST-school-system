@@ -3,7 +3,8 @@ from django.forms.models import model_to_dict
 from django.http import HttpResponse, JsonResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 
-from school_app import models
+from rest_framework import viewsets
+from school_app import models, serializers
 
 import json
 
@@ -43,3 +44,7 @@ def subject_detail(request, pk):
     elif request.method == "DELETE":
         subject.delete()
         return HttpResponse(status=204)
+
+class TeacherViewset(viewsets.ModelViewSet):
+    serializer_class = serializers.TeacherSerializer
+    queryset = models.Teacher.objects.all()

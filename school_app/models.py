@@ -1,3 +1,5 @@
+from datetime import datetime
+from turtle import title
 from django.db import models
 
 class Subject(models.Model):
@@ -6,3 +8,13 @@ class Subject(models.Model):
 
     def __str__(self):
         return f"Name: {self.name}, ABBREV: {self.abbrev}"
+class Teacher(models.Model):
+    name = models.CharField(max_length=256)
+    surname = models.CharField(max_length=256)
+    title = models.CharField(max_length=16, blank= True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["created"]
+    def __str__(self):
+        return f"{self.name} {self.surname}"
