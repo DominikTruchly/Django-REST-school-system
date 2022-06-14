@@ -1,0 +1,5 @@
+/school_app/__pycache__
+backup
+db.sqlite3
+/school_project/__pycache__
+/school_app/migrations/__pycache__
